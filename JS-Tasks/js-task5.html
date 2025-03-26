@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Task 5</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .invalid {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="contactForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <span id="nameError" class="error"></span><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <span id="emailError" class="error"></span><br><br>
+
+        <label for="website">Website:</label>
+        <input type="text" id="website" name="website">
+        <span id="websiteError" class="error"></span><br><br>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+        <span id="messageError" class="error"></span><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+            document.querySelectorAll('input, textarea').forEach(el => el.classList.remove('invalid'));
+
+            let valid = true;
+
+            const name = document.getElementById('name');
+            if (name.value.trim() === '') {
+                document.getElementById('nameError').textContent = 'This field is required';
+                name.classList.add('invalid');
+                valid = false;
+            }
+
+            const email = document.getElementById('email');
+            if (email.value.trim() === '') {
+                document.getElementById('emailError').textContent = 'This field is required';
+                email.classList.add('invalid');
+                valid = false;
+            } else if (!isValidEmail(email.value.trim())) {
+                document.getElementById('emailError').textContent = 'A valid email address is required';
+                email.classList.add('invalid');
+                valid = false;
+            }
+
+            const website = document.getElementById('website');
+            if (website.value.trim() !== '' && !isValidURL(website.value.trim())) {
+                document.getElementById('websiteError').textContent = 'A valid URL is required';
+                website.classList.add('invalid');
+                valid = false;
+            }
+
+            const message = document.getElementById('message');
+            if (message.value.trim() === '') {
+                document.getElementById('messageError').textContent = 'This field is required';
+                message.classList.add('invalid');
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function isValidURL(url) {
+            const urlRegex = /^(http(s)?:\/\/)?(www\.)?([a-zA-Z0-9-]+)\.([a-zA-Z]{2,})(\/[a-zA-Z0-9-#]+\/?)*$/;
+            return urlRegex.test(url);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 6</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f3f3;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h1 {
+            font-family: "Times New Roman", serif;
+            font-style: italic;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            background-color: #fafafa;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 8px;
+            background: transparent;
+        }
+
+        .icon {
+            padding: 5px;
+            color: #555;
+        }
+
+        .login-btn {
+            background-color: #0095F6;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            background-color: #007acc;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin: 10px 0;
+        }
+
+        .options a {
+            text-decoration: none;
+            color: #0095F6;
+        }
+
+        .signup {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .signup a {
+            color: #0095F6;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Instagram</h1>
+        
+        <form id="loginForm" onsubmit="return validateLogin()">
+            <div class="input-group">
+                <span class="icon">👤</span>
+                <input type="text" id="username" placeholder="Username">
+            </div>
+            <div class="input-group">
+                <span class="icon">🔒</span>
+                <input type="password" id="password" placeholder="Password">
+            </div>
+
+            <button type="submit" class="login-btn">Log in</button>
+
+            <div class="options">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+        </form>
+
+        <div class="signup">
+            Don't have an account? <a href="#">Sign up here.</a>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (username === '' || password === '') {
+                alert('Please fill in both fields.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 400px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+        }
+        input[type="text"], input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn-container {
+            background-color: #e5e5e5; /* Grey background */
+            padding: 15px;
+           border: 1px solid rgba(0, 0, 0, 0.21);
+            margin-top: 15px;
+        }
+        .btn-login {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+           
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px; 
+        }
+        .btn-cancel {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100px;
+        }
+        .forgot-password a {
+            text-decoration: none;
+            color: blue;
+        }
+        .remember {
+            text-align: left;
+            margin: 10px 0;
+        }
+        .n {
+            font-weight: bold;
+            display: block;
+            text-align: left;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="profile-img" alt="Profile">
+        <form>
+            <label for="name" class="n">Username</label>
+            <input type="text" placeholder="Enter Username">
+            <label for="password" class="n">Password</label>
+            <input type="password" placeholder="Enter Password">
+            <button class="btn-login">Login</button>
+            <div class="remember">
+                <input type="checkbox"> Remember me
+            </div>
+
+            <div class="btn-container">
+                <div class="btn-row">
+                    <button class="btn-cancel">Cancel</button>
+                    <div class="forgot-password">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</body>
+</html>

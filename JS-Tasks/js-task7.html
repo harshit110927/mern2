@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+JS Task 7
+</title>
+   <style>
+      #animation-container {
+         width: 100%;
+         overflow: hidden;
+         position: relative;
+      }
+
+      #myimg {
+         position: relative;
+         left: 50px;
+      }
+   </style>
+   <script type="text/javascript">
+      var img = null;
+      var animationInterval = null;
+      var containerWidth = 0;
+
+      function init() {
+         img = document.getElementById('myimg');
+         containerWidth = document.getElementById('animation-container').offsetWidth;
+         img.style.position = 'relative';
+         img.style.left = '50px';
+      }
+
+      function moveRight() {
+         var currentLeft = parseInt(img.style.left);
+         currentLeft += 2; // Adjust the speed as needed
+
+         if (currentLeft > containerWidth) {
+            // Reset the position when it reaches the end
+            img.style.left = '-200px'; // Move it back to the left of the container
+         } else {
+            img.style.left = currentLeft + 'px';
+         }
+      }
+
+      function startAnimation() {
+         if (animationInterval === null) {
+            animationInterval = setInterval(moveRight, 10); // Adjust the interval and speed as needed
+         }
+      }
+
+      function stopAnimation() {
+         if (animationInterval !== null) {
+            clearInterval(animationInterval);
+            animationInterval = null;
+         }
+      }
+
+      window.onload = init;
+   </script>
+</head>
+
+<body>
+   <form>
+      <div id="animation-container">
+         <img id="myimg" src="train.png" />
+      </div>
+      <center>
+        <p style="font-weight: bold; font-size: 24px; color: blue;">Click the following buttons to handle animation</p>
+         <input type="button" value="Start" onclick="startAnimation();" />
+         <input type="button" value="Stop" onclick="stopAnimation();" />
+      </center>
+   </form>
+</body>
+
+</html>

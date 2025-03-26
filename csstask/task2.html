@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        /* Vertical Navigation */
+        .vertical-nav {
+            width: 150px;
+            background-color: lightblue;
+            padding: 10px;
+        }
+        .vertical-nav a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .vertical-nav a:first-child {
+            background-color: orange;
+            font-weight: bold;
+        }
+
+        /* Horizontal Navigation */
+        .horizontal-nav {
+            display: flex;
+            background-color: rgb(177, 172, 172);
+            padding: 10px;
+        }
+        .horizontal-nav a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Vertical Navigation Bar</h2>
+    <div class="vertical-nav">
+        <a href="#">Home</a>
+        <a href="#">Java</a>
+        <a href="#">CSS</a>
+        <a href="#">HTML</a>
+        <a href="#">Bootstrap</a>
+    </div>
+
+    <h2>Horizontal Navigation Bar</h2>
+    <div class="horizontal-nav">
+        <a href="#">Home  |</a>
+        <a href="#">Java  |</a>
+        <a href="#">HTML  |</a>
+        <a href="#">CSS</a>
+    </div>
+</body>
+</html>

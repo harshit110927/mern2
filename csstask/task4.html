@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <style>
+        .sidenav {
+            width: 50px;
+            position: fixed;
+            left: 0;
+            top: 50px;
+            
+        }
+        .sidenav div {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+            transition: width 0.3s;
+            
+        }
+        .sidenav div:hover {
+            width: 150px;
+            cursor: pointer;
+            font-size: larger;
+            font-weight: bolder;
+        }
+        .blue { background-color: blue; }
+        .green { background-color: green; }
+        .red { background-color: red; }
+        .black { background-color: rgb(0, 0, 0); }
+    </style>
+</head>
+<body>
+    <h2>Hoverable Sidenav Buttons</h2>
+    <p style="text-align: center;">Hover over the buttons in the left side navigation to open them.</p>
+    <div class="sidenav" style="font-size: medium;">
+        <div class="blue">Home</div>
+        <div class="green">About</div>
+        <div class="red">Contact Us</div>
+        <div class="black" style="color: azure;">Socials</div>
+    </div>
+</body>
+</html>

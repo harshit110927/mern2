@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Task 4</title>
+</head>
+<body>
+    <button onclick="showDate()">Show Date</button>
+    <p id="dateResult"></p>
+
+    <button onclick="showTime()">Show Time</button>
+    <p id="timeResult"></p>
+
+    <script>
+        function showDate() {
+            const currentDate = new Date();
+            const day = currentDate.getDate();
+            const month = currentDate.toLocaleString('en-US', { month: 'long' });
+            const year = currentDate.getFullYear();
+            document.getElementById('dateResult').textContent = `${day}/${month}/${year}`;
+        }
+
+        function showTime() {
+            const currentTime = new Date();
+            document.getElementById('timeResult').textContent = currentTime.toString();
+        }
+    </script>
+</body>
+</html>
+
+</html>

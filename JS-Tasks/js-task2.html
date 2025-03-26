@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Task 2</title>
+</head>
+<body>
+    <form>
+        <label for="stringInput">Enter a string:</label>
+        <input type="text" id="stringInput" required>
+        <button type="button" onclick="sortString()">Sort</button>
+    </form>
+    <p>Sorted String: <span id="result"></span></p>
+
+    <script>
+        function sortString() {
+            const stringInput = document.getElementById('stringInput').value;
+
+            const sortedString = stringInput.split('').sort().join('');
+
+            document.getElementById('result').textContent = sortedString;
+        }
+    </script>
+</body>
+</html>

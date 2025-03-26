@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #822a47;
+            padding: 20px;
+        }
+        .form-box {
+            width: 50%;
+            max-width: 600px;
+            background-color: #5d1f33;
+            padding: 30px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        label {
+            color: white;
+            font-size: 16px;
+            width: 30%;
+            text-align: right;
+            font-weight: bold;
+        }
+        input,select, textarea {
+            width: 65%;
+            padding: 10px;
+            border: none;
+            font-size: 16px;
+            color: white;
+        }
+        select{
+            color:grey
+        }
+        
+        .gender-group {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+        }
+        .btn-register {
+            width: 100%;
+            padding: 12px;
+            background-color: white;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-register:hover {
+            background-color: #ddd;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-box {
+                width: 90%;
+            }
+            .form-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            label {
+                width: 100%;
+                text-align: left;
+            }
+            input, select, textarea {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" placeholder="Your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" placeholder="Enter password" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" placeholder="Your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="gender-group">
+                        <input type="radio" name="gender" value="male"> Male
+                        <input type="radio" name="gender" value="female"> Female
+                        <input type="radio" name="gender" value="other"> Other
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="language">Language:</label>
+                    <select>
+                        <option>Select language</option>
+                        <option>English</option>
+                        <option>Hindi</option>
+                        <option>Spanish</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="zipcode">Zip Code:</label>
+                    <input type="text" placeholder="Your zip code" required>
+                </div>
+                <div class="form-group">
+                    <label for="about">About:</label>
+                    <textarea placeholder="Write about yourself..." rows="3"></textarea>
+                </div>
+                <button class="btn-register">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
